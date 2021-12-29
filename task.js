@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const taskFile = path.join(process.cwd(), "task.txt");
-const completedFile = path.join(process.cwd(), "completed.txt");
+const taskFile = path.join(__dirname, "task.txt");
+const completedFile = path.join(__dirname, "completed.txt");
 
 const printInstruction = () => {
   process.stdout.write(`Usage :-
@@ -167,7 +167,6 @@ const markItemDone = () => {
 const showStats = () => {
   const pendingTasks = parseFile();
   const completedTasks = parseFile("complete");
-  console.log(completedTasks);
 
   process.stdout.write(`Pending : ${pendingTasks.length}\n`);
   process.stdout.write(format(pendingTasks, "list"));
