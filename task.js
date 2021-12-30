@@ -108,7 +108,7 @@ const format = (list, style = "write") => {
 const addItem = () => {
   const task = {};
   task.task = ""
-    .concat(process.argv.filter((args, index) => index > 3))
+    .concat(process.argv.filter((_, index) => index > 3))
     .replace(/,/g, " ");
   task.priority = parseInt(process.argv[3]);
   task.complete = false;
